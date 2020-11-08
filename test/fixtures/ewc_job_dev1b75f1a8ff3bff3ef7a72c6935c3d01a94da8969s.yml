@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  url: MyText
+  tag: MyString
+  content: MyText
+  wordcount: 1
+
+two:
+  url: MyText
+  tag: MyString
+  content: MyText
+  wordcount: 1

@@ -1,0 +1,47 @@
+
+.navbar-header {
+  
+    text-align: center;
+    width: 100%;
+
+}
+.navbar-brand  {float:none}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid red;
+}
+
+.label_s{
+	font-weight: unset !important
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: rgba(232, 231, 231, 0.38);
+  
+}
+td, th {
+    white-space: normal; /* Only needed when it's set differntly somewhere else */
+    word-wrap: break-word;
+}
+.loader{
+    position: fixed;
+    width: 25%;
+    height: 40%;
+    margin: 0px auto;
+    z-index: 9999;
+    background: url('/assets/loading.gif') 50% 50% no-repeat;
+   
+}
+#new_user{
+    background-color: #fff;
+    padding-left: 8px;
+    padding-right:8px; 
+}
+

@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="row">
+	    <div class="col-sm-4"></div> 
+			<div class="col-sm-4" style="margin-top:40px">
+		        <div class="center"><div class="loader"></div></div>
+				<%= form_tag({:controller=>"users", :action=>"show_page"},:id=>"new_user", :onsubmit => "return result()",method: :post, remote: true) do %>
+					<div class="form-group material">
+							<%= text_field_tag :url,"" , name: 'url' , placeholder: "Enter the url"  %>
+					</div>
+				    <div class="field form-group">				 
+						   <%= radio_button_tag :page_type, :page, checked: true %>
+						   <%= label_tag :Page, "Page",:style => "font-weight:unset;font-size:13px" %>
+						   
+			     		   <%= radio_button_tag :page_type, :site %>
+			     		   <%= label_tag :Website, "Website",:style => "font-weight:unset;font-size:13px"%>	 
+				    </div>
+
+					<div class="field form-group">
+					<%= text_field_tag  :email,"", name: 'email' , placeholder: "Enter your email" %>
+					</div>
+
+		            <div class="field form-group">
+					    <%= check_box :terms ,"", id: 'check' %>
+ 						<%= label_tag 'Terms of Use', 'Terms of Use',:style => "font-weight:unset;font-size:13px"%>	
+					</div>
+
+                    <div class="field form-group">     
+                     <div class="g-recaptcha" data-sitekey="6LeAEhQUAAAAAEUiDkV4TUQkrCacbzljwgRJnRFy"  ></div>
+                     <input type="hidden" class="hiddenRecaptcha required" name="hiddenRecaptcha" id="hiddenRecaptcha">
+                    </div>
+
+                    <!-- Progress Bar -->
+
+					<div class="field form-group">
+					    <div class="export">
+						  <%= submit_tag 'submit', name: nil , class: 'form-control btn-danger'%><br/>
+						  <div class="well" style="display:none">
+						    <div class="row">
+						      <div class="col-xs-12">
+						        <div class="progress-status text-primary"></div>
+						      </div>
+						    </div>
+						    <div class="row">
+						      <div class="col-xs-12">
+						        <div class="progress progress-striped active">
+						          <div class="progress-bar">
+						            <div class="text-primary">
+						              0%
+						            </div>
+						          </div>
+						        </div>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+						<br/>
+					</div>
+				<% end %>
+            </div>
+        <div class="col-sm-4"></div>
+          <% link_to "Excel", generate_xls_path(format: "xls")%>
+    </div>
+</div>
+
+<script>
+
+</script>
+
+
+
+

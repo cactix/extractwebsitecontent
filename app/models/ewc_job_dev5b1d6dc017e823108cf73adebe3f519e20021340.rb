@@ -1,0 +1,2 @@
+class EwcJobDev5b1d6dc017e823108cf73adebe3f519e20021340 < ActiveRecord::Base
+end

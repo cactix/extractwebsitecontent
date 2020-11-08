@@ -1,0 +1,43 @@
+<div class="container">
+    <div style="float:right"><%= link_to "Return Back", users_path, method: :get %></div>
+    <table border="1px solid" width="100%"> 
+            <tr>
+            	<td colspan="4" style="text-align:center;font-weight:bold">Url</td>
+            	<td colspan="4" style="text-align:center;font-weight:bold">Tag</td>
+            	<td colspan="4" style="text-align:center;font-weight:bold">Content</td>
+            </tr> 
+			<% if @hash%>
+				<%@url = ""%>
+			    <h4><b>Extracted Content:</b></h4>
+			    <%@hash_master.each do |hash|%>
+			        <% hash.each do |key,value|%>    
+		                <%if key == "url"%>
+		                	<% @url = value%>
+		                <%else%>
+		                <% if value.reject(&:empty?).length > 0 %>
+		                <tr> 
+		                	<td valign="top" colspan="4" style="padding-left:9px;">
+		                		<b><%= @url %></b></td>
+						    <td valign="top" colspan="4" style="padding-left:9px;"><%if key != "url"%><b><%= key%></b><%end%></td>
+						    <td style="padding-left:8px;padding-top:6px">
+						        <%if key != "url"%>
+						          <% value.uniq.reject(&:empty?).each do |wi|%>
+						            <%= wi.encode("UTF-16be", :invalid=>:replace, :replace=>"?").encode('UTF-8')%><br/><br/>
+						          <%end%>
+						        <%end%>
+						    </td> 
+		                </tr>
+		                <%end%>
+			               <%end%>   
+			        <%end%>
+			    <%end%>
+            <%else%>
+                <center><%=@error.message if @error%></center>
+	        <%end%>
+ 
+    </table> 
+        <div class="clear:both">&nbsp;&nbsp;</div>
+
+</div>
+
+

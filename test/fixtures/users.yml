@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  AutoNumber: 
+  IP_address: 
+  url: MyText
+  option_selected: MyString
+  email: MyString
+  time_elapsed: 2017-03-06 10:32:33
+  job_status: MyString
+
+two:
+  AutoNumber: 
+  IP_address: 
+  url: MyText
+  option_selected: MyString
+  email: MyString
+  time_elapsed: 2017-03-06 10:32:33
+  job_status: MyString
